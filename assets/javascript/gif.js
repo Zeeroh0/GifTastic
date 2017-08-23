@@ -39,7 +39,7 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
     	// Grabbing and storing the data-name property value from the button
     	var celeb = $(this).attr("data-name");
     	// Constructing a queryURL using the celebrity's name
-    	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+    	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     		celeb + "+CRYING+&api_key=b680088444274bf396529f0180b02ee8&limit=10";
 
     	// Performing an AJAX request with the queryURL
