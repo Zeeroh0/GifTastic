@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Famous Cry Babies</title>
+
+	<meta charset="utf-8">
+	<meta name="description" content="We watch them all day long...now watch them cry like babies!">
+	<meta name="author" content="Tyler Mitchell">
+	<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+<style type="text/css">
+	button,
+	div,
+	form,
+	input {
+	  margin: 10px;
+	}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+	<h1>Do you really want to see me cry?</h1>
+
+	<div id="buttonDisplay"></div>
+
+	<form id="search-form">
+  		<label for="search-input">Who do you want to see shed a tear?</label>
+  		<input type="text" id="celebrity-input">
+		
+  		<br>
+		
+  		<!-- Button triggers new celebrities to be added -->
+  		<input id="add-celebrity" type="submit" value="Feed me with tears!">
+    </form>
+
+    <!-- Gifs will get dumped here -->
+    <div id="gifs-view"></div>
+
+</div>
+
+
+	<!-- Link JQuery and the JavaScript file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/gif.js"></script>
+
+</body>
+</html>
