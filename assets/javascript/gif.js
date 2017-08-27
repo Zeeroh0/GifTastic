@@ -2,8 +2,8 @@
 
 //************GLOBAL VARIABLES************//
 
-var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey", 
-				 "Johnny Depp", "Natalie Portman", "Nicole Kidman" ];
+var celebDance = ["Steve Carell", "Tina Fey", "Jim Carrey", 
+				 "Elmo", "Natalie Portman", "Zach Braff", "Marlon Wayans" ];
 
 
 
@@ -17,16 +17,16 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttonDisplay").empty();
         // Looping through the array of movies
-        for (var i = 0; i < cryBabies.length; i++) {
+        for (var i = 0; i < celebDance.length; i++) {
         	// Then dynamicaly generating buttons for each celebrity in the array
         	// This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         	var a = $("<button>");
         	// Adding a class of celebrity to our button
         	a.addClass("celebrity");
         	// Adding a data-attribute
-        	a.attr("data-name", cryBabies[i]);
+        	a.attr("data-name", celebDance[i]);
         	// Providing the initial button text
-        	a.text(cryBabies[i]);
+        	a.text(celebDance[i]);
         	// Adding the button to the buttons-view div
         	$("#buttonDisplay").append(a);
     	}
@@ -40,7 +40,7 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
     	var celeb = $(this).attr("data-name");
     	// Constructing a queryURL using the celebrity's name
     	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    		celeb + "+CRYING+&api_key=b680088444274bf396529f0180b02ee8&limit=10";
+    		celeb + "+DANCING+&api_key=b680088444274bf396529f0180b02ee8&limit=10";
 
     	// Performing an AJAX request with the queryURL
     	$.ajax({
@@ -71,7 +71,7 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
 		            // Creating and storing an image tag
 		            var celebImage = $("<img>");
 		            // Give the img a class to grab for clicking later 
-		            celebImage.addClass("peanut");
+		            celebImage.addClass("gifClick");
 		            // Setting the src attribute of the image to a property pulled off the result item
 		            // This will begin as a still image.
 		            celebImage.attr("src", results[i].images.fixed_height_still.url);
@@ -129,10 +129,11 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
 	    // This line grabs the input from the textbox
 	    var celebrity = $("#celebrity-input").val().trim()
 	    // Adding movie from the textbox to our array
-	    cryBabies.push(celebrity)
+	    celebDance.push(celebrity)
 	    // Calling renderButtons which handles the processing of our movie array
 	    renderButtons();
 	    //Clear the data entry field
+        $("#celebrity-input").val("");
     });
 
 
@@ -141,7 +142,7 @@ var cryBabies = ["Steve Carell", "Tina Fey", "Jim Carrey",
 
 
 //This click event will animate/freeze a gif on click
-    $(document).on("click", ".peanut", itsAlive);
+    $(document).on("click", ".gifClick", itsAlive);
 
 
 
